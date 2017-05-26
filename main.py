@@ -87,9 +87,9 @@ def training(images_train, labels_train):
             w2[ : , j] += learning_rate * l2_delta[j] * l1
         for k in range(0, hidden_num):
             w1[ : , k] += learning_rate * l1_delta[k] * l0
-
         outChannel_offset += learning_rate * l2_delta
         hidden_offset += learning_rate * l1_delta
+
     print("error: {0:.3g}       times: {1:.4g} seconds".format(sum(error) / data_num, time.time() - start_t))
     return w1, w2, hidden_offset, outChannel_offset
 
